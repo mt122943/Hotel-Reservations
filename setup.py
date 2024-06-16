@@ -1,11 +1,11 @@
-from setuptools import find_packages, setup
+from setuptools import setup, find_packages
 
 setup(
-    name='hotel_reservations',  # Nazwa pakietu
-    packages=find_packages(where='src'),  # Znajduje wszystkie pakiety w katalogu 'src'
-    package_dir={'': 'src'},  # Określa, że pakiety znajdują się w katalogu 'src'
+    name='hotel_reservations',
     version='0.1.0',
-    description='This is the basic template for data science projects.',
-    author='Marcin',
-    license='',  # Usunięta licencja
+    packages=find_packages(),
+    install_requires=[
+        'pyyaml',
+        'python-dotenv',
+    ],
 )

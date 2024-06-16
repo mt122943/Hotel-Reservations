@@ -1,22 +1,120 @@
-Kroki do ustawienia projektu
+----------------------------------------
+----- Kroki do ustawienia projektu -----
+----------------------------------------
+
 
 1. Inicjalizacja środowiska wirtualnego
+----------------------------------------
 
 W terminalu, będąc w katalogu głównym projektu, uruchom:
 
-python -m venv .venv # Utworzenie środowiska wirtualnego w katalogu .venv
+python -m venv .venv  # Utworzenie środowiska wirtualnego w katalogu .venv
 
-source .venv/Scripts/activate  # Aktywacja środowiska wirtualnego BASH
-.venv\Scripts\activate # Aktywacja środowiska wirtualnego Windows
-.venv\Scripts\Activate.ps1 # Aktywacja środowiska wirtualnego PowerShell
+Aktywacja środowiska wirtualnego:
 
-# Upewnij się, że ścieżka do interpretera Pythona wskazuje na środowisko wirtualne
-python -c "import sys; print(sys.executable)" # BASH # Powinno zwrócić ścieżkę do interpretera w katalogu .venv
+- BASH:
+  source .venv/scripts/activate
+
+- Windows (Command Prompt):
+  .venv\Scripts\activate
+
+- PowerShell:
+  .venv\Scripts\Activate.ps1
+
+Upewnij się, że ścieżka do interpretera Pythona wskazuje na środowisko wirtualne:
+
+Powinno zwrócić ścieżkę do interpretera w katalogu .venv
+
+python -c "import sys; print(sys.executable)"  # Powinno zwrócić ścieżkę do interpretera w katalogu .venv
+
+which python  # BASH 
+
+where python  # Windows
+
+-----------------------------------
+-------- Git i GitHub -------------
+-----------------------------------
+
+Krok 1: Inicjalizacja repozytorium Git
+Otwórz terminal w katalogu projektu:
+
+cd /c/Users/poczt/OneDrive/Documents/Data/Data science/Projekty/Hotel Reservations
+
+Zainicjalizuj repozytorium Git:
+
+git init
+
+Powinieneś zobaczyć komunikat:
+
+Initialized empty Git repository in /path/to/your/project/.git/
+
+Krok 2: Dodanie plików do repozytorium
+Dodaj wszystkie pliki do repozytorium:
+
+git add .
+
+Krok 3: Utworzenie pierwszego commitu
+Utwórz pierwszy commit:
+
+git commit -m "Initial commit with project structure"
+
+Powinieneś zobaczyć komunikat o dodanych plikach:
+
+[master (root-commit) 9fceb02] Initial commit with project structure
+ 47 files changed, 1892 insertions(+)
+ create mode 100644 .env
+ create mode 100644 .gitignore
+ create mode 100644 LICENSE
+ ...
+
+Krok 4: Utworzenie zdalnego repozytorium na GitHubie
+Zaloguj się na swoje konto GitHub i utwórz nowe repozytorium:
+
+Wejdź na stronę GitHub.
+Kliknij przycisk New repository.
+Wprowadź nazwę repozytorium (np. Hotel-Reservations).
+Kliknij Create repository.
+
+Skonfiguruj zdalne repozytorium w lokalnym repozytorium Git:
+
+git remote add origin https://github.com/mt122943/Hotel-Reservations.git
+
+Krok 5: Wysłanie zmian do zdalnego repozytorium
+Wyślij zmiany do zdalnego repozytorium na GitHubie:
+
+git push -u origin master
+
+Będziesz poproszony o podanie swojego loginu i hasła do GitHub (lub tokenu dostępu, jeśli używasz dwuskładnikowego uwierzytelniania).
+
+Podsumowanie
+Teraz twoje lokalne repozytorium Git jest skonfigurowane, a zmiany zostały przesłane do zdalnego repozytorium na GitHubie. Możesz kontynuować pracę, dodawać nowe zmiany, commitować je i przesyłać do GitHub, używając poniższych poleceń:
+
+Dodanie zmian:
+
+git add .
+
+Commitowanie zmian:
+
+git commit -m "Opis zmian"
+
+Wysłanie zmian do GitHub:
+
+git push
+
 
 2. Instalacja wymaganych pakietów
+----------------------------------------
 
 Upewnij się, że masz plik requirements.txt z wszystkimi wymaganymi bibliotekami:
 
+numpy
+pandas
+matplotlib
+seaborn
+statsmodels
+scikit-learn
+mlxtend
+python-dotenv>=0.5.1
 
 Następnie zainstaluj pakiety:
 
@@ -25,6 +123,7 @@ pip install -r requirements.txt
 
 
 3. Konfiguracja zmiennych środowiskowych
+----------------------------------------
 
 Utwórz plik .env w katalogu głównym projektu i dodaj do niego odpowiednie zmienne środowiskowe:
 
