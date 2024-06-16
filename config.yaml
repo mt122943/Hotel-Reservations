@@ -1,0 +1,6 @@
+paths:
+  raw_data: data/raw/Hotel Reservations.csv
+  interim_data: data/interim
+  processed_data: data/processed
+  models: models
+  figures: reports/figures

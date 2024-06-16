@@ -1,0 +1,32 @@
+Kroki do ustawienia projektu
+
+1. Inicjalizacja środowiska wirtualnego
+
+W terminalu, będąc w katalogu głównym projektu, uruchom:
+
+python -m venv .venv # Utworzenie środowiska wirtualnego w katalogu .venv
+
+source .venv/Scripts/activate  # Aktywacja środowiska wirtualnego BASH
+.venv\Scripts\activate # Aktywacja środowiska wirtualnego Windows
+.venv\Scripts\Activate.ps1 # Aktywacja środowiska wirtualnego PowerShell
+
+# Upewnij się, że ścieżka do interpretera Pythona wskazuje na środowisko wirtualne
+python -c "import sys; print(sys.executable)" # BASH # Powinno zwrócić ścieżkę do interpretera w katalogu .venv
+
+2. Instalacja wymaganych pakietów
+
+Upewnij się, że masz plik requirements.txt z wszystkimi wymaganymi bibliotekami:
+
+
+Następnie zainstaluj pakiety:
+
+source .venv/bin/activate  # Aktywacja środowiska wirtualnego
+pip install -r requirements.txt
+
+
+3. Konfiguracja zmiennych środowiskowych
+
+Utwórz plik .env w katalogu głównym projektu i dodaj do niego odpowiednie zmienne środowiskowe:
+
+RAW_DATA_PATH=data/raw/raw_data.csv
+PROCESSED_DATA_PATH=data/processed/processed_data.csv
